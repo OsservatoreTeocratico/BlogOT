@@ -1,0 +1,19 @@
+baseURL: "/"
+title: "Osservatore Teocratico"
+theme: "PaperMod"
+languageCode: "it"
+
+params:
+  defaultTheme: light
+  homeInfoParams:
+    Title: "Osservatore Teocratico"
+    Content: "Benvenuti. Questo spazio è dedicato all'analisi critica e alla libertà di pensiero."
+
+menu:
+  main:
+    - name: "Articoli"
+      url: "/post/"
+      weight: 10
+    - name: "Admin"
+      url: "/admin/"
+      weight: 100

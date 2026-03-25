@@ -1,0 +1,15 @@
+<form id="comment-form" name="commenti-blog" method="POST" data-netlify="true" data-netlify-recaptcha="true">
+  <input type="hidden" name="post-id" value="{{ .File.BaseFileName }}">
+  
+  <div class="comment-field">
+    <input type="text" name="name" placeholder="Tuo Nickname (es. Anonimo)" required>
+  </div>
+  
+  <div class="comment-field">
+    <textarea name="message" placeholder="La tua riflessione..." required></textarea>
+  </div>
+
+  <div data-netlify-recaptcha="true"></div>
+
+  <button type="submit" class="submit-btn">Invia per la moderazione</button>
+</form>
