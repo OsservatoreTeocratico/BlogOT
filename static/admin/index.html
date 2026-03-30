@@ -21,6 +21,13 @@
           }
         });
       }
+      // Forza l'apertura del widget se non viene rilevato automaticamente
+      document.addEventListener('DOMContentLoaded', () => {
+      const loginButton = document.createElement('div');
+      if (!window.localStorage.getItem('netlify-cms-user')) {
+         window.netlifyIdentity.open();
+      }
+    });
     </script>
   </body>
 </html>
