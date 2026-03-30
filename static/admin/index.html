@@ -10,24 +10,23 @@
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
     
     <script>
-      // Questo piccolo script serve a reindirizzare l'utente alla admin 
-      // dopo che ha confermato l'email di invito.
       if (window.netlifyIdentity) {
+        // Inizializzazione
         window.netlifyIdentity.on("init", user => {
           if (!user) {
+            // Se l'utente non è loggato, monitora il login
             window.netlifyIdentity.on("login", () => {
-              document.location.href = "/admin/";
+              // Usa il percorso relativo "./" per evitare errori di 404
+              document.location.href = "./";
             });
           }
         });
+
+        // Gestione Logout: riporta l'utente alla home del blog se esce
+        window.netlifyIdentity.on("logout", () => {
+          document.location.href = "../";
+        });
       }
-      // Forza l'apertura del widget se non viene rilevato automaticamente
-      document.addEventListener('DOMContentLoaded', () => {
-      const loginButton = document.createElement('div');
-      if (!window.localStorage.getItem('netlify-cms-user')) {
-         window.netlifyIdentity.open();
-      }
-    });
     </script>
   </body>
 </html>
