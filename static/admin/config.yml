@@ -1,8 +1,8 @@
 backend:
   name: git-gateway
   branch: main
-  site_domain: osservatoreteocratico.github.io/BlogOT/ # Aggiungi questa riga
-
+  site_domain: osservatoreteocratico.netlify.app 
+  
 media_folder: "static/images"
 public_folder: "/images"
 
